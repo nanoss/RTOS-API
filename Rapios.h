@@ -65,13 +65,6 @@ typedef int BOOL;
 typedef int STATUS;
 typedef unsigned long long UINT64;
 
-//#define NULL					0
-#ifndef OK
-#define OK						0
-#endif
-
-#ifndef ERROR
-#define ERROR					-1
 #endif
 
 #endif
