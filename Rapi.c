@@ -12,7 +12,8 @@ INT32 createTaskVX653(char * name, int priority, void(*entryPt) (void *), int st
 
 INT32 taskDelayVX653(int ms)
 {
-    taskDelay((UINT32) ((ms + 8.3) / 16.6));
+    taskDelay((UINT32)(((sysClkRateGet() * ms + 999) / 1000)));
+    
     return 0;
 }
 
@@ -64,8 +65,7 @@ INT32 msgQReceiveVX653(RAPI_MSG_Q_ID msgQId, char * buffer, UINT32 maxNBytes, in
 
 UINT64 rtcGetVX653(void) /*ns*/
 {
-    return (UINT64)
-    tickGet() * 16667 * 1000;
+    return (UINT64)tickGet() * 1000 * 1000 * 1000 / sysClkRateGet();
 }
 #endif
 
