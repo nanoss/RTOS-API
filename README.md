@@ -1,7 +1,7 @@
 # RTOS-API
-firstday
 
-RTOS API for vxWorks/win32...
+
+RTOS API for vxWorks/win32 
 
 thread
     create
